@@ -54,19 +54,19 @@ public class DeveloperController {
         Developer newDeveloper;
         if(Experience.JUNIOR.equals(developer.getExperience()))
         {
-            double netSalary = developer.getSalary() - (taxable.getSimpleTaxRate()*developer.getSalary());
+            double netSalary = developer.getSalary() - (taxable.getSimpleTaxRate()*developer.getSalary()/100);
             newDeveloper = new JuniorDeveloper(developer.getId(),developer.getName(),netSalary);
             developers.put(newDeveloper.getId(),newDeveloper);
             return newDeveloper;
         }else if(Experience.MID.equals(developer.getExperience()))
         {
-            double netSalary = developer.getSalary() - (taxable.getMiddleTaxRate()*developer.getSalary());
+            double netSalary = developer.getSalary() - (taxable.getMiddleTaxRate()*developer.getSalary()/100);
             newDeveloper = new MidDeveloper(developer.getId(),developer.getName(),netSalary);
             developers.put(newDeveloper.getId(),newDeveloper);
             return newDeveloper;
         }else if(Experience.SENIOR.equals(developer.getExperience()))
         {
-            double netSalary = developer.getSalary() - (taxable.getUpperTaxRate()*developer.getSalary());
+            double netSalary = developer.getSalary() - (taxable.getUpperTaxRate()*developer.getSalary()/100);
             newDeveloper = new SeniorDeveloper(developer.getId(),developer.getName(),netSalary);
             developers.put(newDeveloper.getId(),newDeveloper);
             return newDeveloper;
