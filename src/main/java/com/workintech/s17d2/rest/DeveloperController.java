@@ -48,6 +48,7 @@ public class DeveloperController {
     }
 
     @PostMapping()
+    //Bu şekilde başarılı bir işlemin http status kodunu 201 olarak döndürmesini sağlıyor.
     @ResponseStatus(code = HttpStatus.CREATED)
     public Developer saveDeveloper(@RequestBody Developer developer)
     {
